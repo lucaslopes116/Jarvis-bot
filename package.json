@@ -4,7 +4,7 @@
   "description": "",
   "main": "bot.js",
   "scripts": {
-    "dev": " set NODE_ENV=development && nodemon bot.js",
+    "dev": "nodemon bot.js",
     "start": "node bot.js"
   },
   "author": "LucasLopes",
