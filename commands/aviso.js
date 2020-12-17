@@ -1,7 +1,7 @@
 const { avisoChannelId } = require('../config.json');
 
 module.exports = async (client, msg) => {
-  const avisoChannel = await msg.guild.channels.find((channel) => channel.id === avisoChannelId);
+  const avisoChannel = await msg.guild.channels.find((channel) => (channel.id === process.env.AVISOCHANNELID ? process.env.AVISOCHANNELID : avisoChannelId));
   let message = msg.content.split(' ');
   message.splice(0, 1);
   message = message.join(' ');

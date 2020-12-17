@@ -3,7 +3,7 @@ const { token, prefix } = require('./config.json');
 
 const client = new Discord.Client();
 
-const commands = require('./scripts/commandsReader')(prefix);
+const commands = require('./scripts/commandsReader')(process.env.PREFIX ? process.env.PREFIX : prefix);
 
 client.on('ready', () => {
   console.log(`Logando com o bot ${client.user.tag}`);
@@ -21,4 +21,4 @@ client.on('message', (msg) => {
   }
 });
 
-client.login(token);
+client.login(process.env.TOKEN ? process.env.TOKEN : token);

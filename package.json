@@ -4,7 +4,7 @@
   "description": "",
   "main": "bot.js",
   "scripts": {
-    "dev": "nodemon bot",
+    "dev": "nodemon bot.js",
     "start": "node bot.js"
   },
   "author": "Lucas Lopes",
