@@ -12,7 +12,7 @@ client.on('ready', () => {
 client.on('message', (msg) => {
   if (!msg.author.bot && msg.guild) {
     console.log(`${msg.author.username}: ${msg.content}`);
-    msg.reply('Fala viado!');
+    msg.reply('Disse a putinha!');
 
     const args = msg.content.split(' ');
     if (commands[args[0]]) {

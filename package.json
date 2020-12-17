@@ -4,7 +4,8 @@
   "description": "",
   "main": "bot",
   "scripts": {
-    "start": "nodemon bot"
+    "dev": "nodemon bot",
+    "start": "node bot.js"
   },
   "author": "Lucas Lopes",
   "license": "ISC",
