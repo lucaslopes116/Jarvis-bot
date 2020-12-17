@@ -1,8 +1,7 @@
 const Discord = require('discord.js');
-const { token } = require('./config.json');
+const { token, prefix } = require('./config.json');
 
 const client = new Discord.Client();
-const prefix = '!';
 
 const commands = require('./scripts/commandsReader')(prefix);
 
@@ -11,9 +10,9 @@ client.on('ready', () => {
 });
 
 client.on('message', (msg) => {
-  if (!msg.author.bot) {
+  if (!msg.author.bot && msg.guild) {
     console.log(`${msg.author.username}: ${msg.content}`);
-    msg.reply('Fala viado!');
+    // msg.reply('Fala viado!');
 
     const args = msg.content.split(' ');
     if (commands[args[0]]) {

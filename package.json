@@ -9,7 +9,7 @@
   "author": "Lucas Lopes",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "discord.js": "11.5.1"
   },
   "devDependencies": {
     "eslint": "^7.15.0",
