@@ -16,7 +16,6 @@ client.on('message', (msg) => {
     msg.reply('Fala viado!');
 
     const args = msg.content.split(' ');
-    console.log('=>', commands[args[0]]);
     if (commands[args[0]]) {
       commands[args[0]](client, msg);
     }
