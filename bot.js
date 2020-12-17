@@ -1,9 +1,9 @@
+require('dotenv').config();
 const Discord = require('discord.js');
-const { token, prefix } = require('./config.json') ? require('./config.json') : undefined;
 
 const client = new Discord.Client();
 
-const commands = require('./scripts/commandsReader')(process.env.PREFIX ? process.env.PREFIX : prefix);
+const commands = require('./scripts/commandsReader')(process.env.PREFIX);
 
 client.on('ready', () => {
   console.log(`Logando com o bot ${client.user.tag}`);
@@ -21,4 +21,4 @@ client.on('message', (msg) => {
   }
 });
 
-client.login(process.env.TOKEN ? process.env.TOKEN : token);
+client.login(process.env.TOKEN);
