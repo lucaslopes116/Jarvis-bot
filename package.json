@@ -1,0 +1,20 @@
+{
+  "name": "jarvis",
+  "version": "1.0",
+  "description": "",
+  "main": "bot",
+  "scripts": {
+    "start": "nodemon bot"
+  },
+  "author": "Lucas Lopes",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.6"
+  }
+}
