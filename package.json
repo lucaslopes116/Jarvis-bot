@@ -7,7 +7,7 @@
     "dev": "nodemon bot.js",
     "start": "node bot.js"
   },
-  "author": "Lucas Lopes",
+  "author": "LucasLopes",
   "license": "ISC",
   "dependencies": {
     "discord.js": "11.5.1"
