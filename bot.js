@@ -11,8 +11,12 @@ client.on("ready", () => {
 
 client.on("message", async (msg) => {
   if (!msg.author.bot && msg.guild) {
+    if(msg.author.username === 'Blacke') {
+      // msg.reply('Vai estudar e fazer algum projeto!');
+
+    }
     console.log(`${msg.author.username}: ${msg.content}`);
-    // msg.reply('Disse a putinha!');
+
 
     const args = msg.content.split(" ");
     if (commands[args[0]]) {
