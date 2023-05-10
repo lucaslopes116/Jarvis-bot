@@ -1,0 +1,162 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "importPath": "discord.client",
+        "description": "discord.client",
+        "isExtraImport": true,
+        "detail": "discord.client",
+        "documentation": {}
+    },
+    {
+        "label": "Intents",
+        "importPath": "discord.flags",
+        "description": "discord.flags",
+        "isExtraImport": true,
+        "detail": "discord.flags",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "discord.message",
+        "description": "discord.message",
+        "isExtraImport": true,
+        "detail": "discord.message",
+        "documentation": {}
+    },
+    {
+        "label": "get_chat_gpt_response",
+        "importPath": "openai_api.openapi_connector",
+        "description": "openai_api.openapi_connector",
+        "isExtraImport": true,
+        "detail": "openai_api.openapi_connector",
+        "documentation": {}
+    },
+    {
+        "label": "openai",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "openai",
+        "description": "openai",
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "discord_token",
+        "importPath": "discord_api.discord_client",
+        "description": "discord_api.discord_client",
+        "isExtraImport": true,
+        "detail": "discord_api.discord_client",
+        "documentation": {}
+    },
+    {
+        "label": "custom_discord_client",
+        "importPath": "discord_api.discord_client",
+        "description": "discord_api.discord_client",
+        "isExtraImport": true,
+        "detail": "discord_api.discord_client",
+        "documentation": {}
+    },
+    {
+        "label": "CustomDiscordClient",
+        "kind": 6,
+        "importPath": "src.discord_api.discord_client",
+        "description": "src.discord_api.discord_client",
+        "peekOfCode": "class CustomDiscordClient(Client):\n    async def on_ready(self):\n        print(f\"Estou conectado ao Discord com o user {self.user}\")\n    async def on_message(self, message: Message):\n        message_content: str = message.content\n        if bot_caller in message_content:\n            prompt: str = message_content.split(bot_caller)[1]\n            print(f\"---------- Prompt message: {prompt} ----------\")\n            chat_gpt_response: str = get_chat_gpt_response(question=prompt)\n            if chat_gpt_response:",
+        "detail": "src.discord_api.discord_client",
+        "documentation": {}
+    },
+    {
+        "label": "discord_token",
+        "kind": 5,
+        "importPath": "src.discord_api.discord_client",
+        "description": "src.discord_api.discord_client",
+        "peekOfCode": "discord_token = os.environ.get('TOKEN')\nclass CustomDiscordClient(Client):\n    async def on_ready(self):\n        print(f\"Estou conectado ao Discord com o user {self.user}\")\n    async def on_message(self, message: Message):\n        message_content: str = message.content\n        if bot_caller in message_content:\n            prompt: str = message_content.split(bot_caller)[1]\n            print(f\"---------- Prompt message: {prompt} ----------\")\n            chat_gpt_response: str = get_chat_gpt_response(question=prompt)",
+        "detail": "src.discord_api.discord_client",
+        "documentation": {}
+    },
+    {
+        "label": "intents",
+        "kind": 5,
+        "importPath": "src.discord_api.discord_client",
+        "description": "src.discord_api.discord_client",
+        "peekOfCode": "intents = Intents.default()\nintents.message_content = True\ncustom_discord_client: CustomDiscordClient = CustomDiscordClient(\n    intents=intents)",
+        "detail": "src.discord_api.discord_client",
+        "documentation": {}
+    },
+    {
+        "label": "intents.message_content",
+        "kind": 5,
+        "importPath": "src.discord_api.discord_client",
+        "description": "src.discord_api.discord_client",
+        "peekOfCode": "intents.message_content = True\ncustom_discord_client: CustomDiscordClient = CustomDiscordClient(\n    intents=intents)",
+        "detail": "src.discord_api.discord_client",
+        "documentation": {}
+    },
+    {
+        "label": "get_chat_gpt_response",
+        "kind": 2,
+        "importPath": "src.openai_api.openapi_connector",
+        "description": "src.openai_api.openapi_connector",
+        "peekOfCode": "def get_chat_gpt_response(question: str) -> str | None:\n    response_from_chat_gpt = openai.Completion.create(\n        model=\"text-davinci-003\",\n        prompt=question,\n        max_tokens=100\n    )\n    if response_from_chat_gpt:\n        choices: List[Dict[str, Any]] = response_from_chat_gpt.get(\n            \"choices\", None)\n        if choices and len(choices) > 0:",
+        "detail": "src.openai_api.openapi_connector",
+        "documentation": {}
+    },
+    {
+        "label": "openai.api_key",
+        "kind": 5,
+        "importPath": "src.openai_api.openapi_connector",
+        "description": "src.openai_api.openapi_connector",
+        "peekOfCode": "openai.api_key = os.environ.get(\"CHAT_GPT_API_KEY\")\ndef get_chat_gpt_response(question: str) -> str | None:\n    response_from_chat_gpt = openai.Completion.create(\n        model=\"text-davinci-003\",\n        prompt=question,\n        max_tokens=100\n    )\n    if response_from_chat_gpt:\n        choices: List[Dict[str, Any]] = response_from_chat_gpt.get(\n            \"choices\", None)",
+        "detail": "src.openai_api.openapi_connector",
+        "documentation": {}
+    }
+]
